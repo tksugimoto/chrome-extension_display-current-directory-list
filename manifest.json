@@ -1,0 +1,24 @@
+{
+	"name": "Display current directory List",
+	"version": "0.1.0",
+	"manifest_version": 2,
+
+	"description": "ローカルファイル閲覧時に同一フォルダの一覧を表示",
+
+	"content_scripts": [{
+		"matches": [
+			"file:///*"
+		],
+		"js": [
+			"display_current_directory_list.js"
+		]
+	}, {
+		"all_frames": true,
+		"matches": [
+			"file:///*?in-iframe"
+		],
+		"js": [
+			"target_change.js"
+		]
+	}]
+}
