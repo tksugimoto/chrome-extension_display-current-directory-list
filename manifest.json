@@ -18,7 +18,7 @@
 			"file:///*?in-iframe"
 		],
 		"js": [
-			"target_change.js"
+			"directory_list.js"
 		]
 	}]
 }
