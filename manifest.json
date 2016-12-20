@@ -9,6 +9,7 @@
 		"matches": [
 			"file:///*"
 		],
+		"run_at": "document_end",
 		"js": [
 			"display_current_directory_list.js"
 		]
