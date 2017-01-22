@@ -15,6 +15,6 @@
 
 	// 右側30%に表示する
 	const width = "70%";
-	document.body.style.width = width;
+	document.querySelector("html").style.width = width;
 	iframe.style.left = width;
 })();
