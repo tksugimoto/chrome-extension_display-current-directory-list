@@ -14,7 +14,8 @@
 	document.body.appendChild(iframe);
 
 	// 右側30%に表示する
-	const width = "70%";
+	const iframeWidthPercent = 30; // [%]
+	const width = `${100 - iframeWidthPercent}%`;
 	document.querySelector("html").style.width = width;
 	iframe.style.left = width;
 })();
