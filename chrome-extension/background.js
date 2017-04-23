@@ -1,4 +1,8 @@
 
+const closeDirectoryListMessage = {
+	method: "close-directory-list"
+};
+
 const ID_CLOSE_DIRECTORY_LIST = "close-directory-list";
 
 const createContextMenu = () => {
@@ -19,18 +23,12 @@ chrome.runtime.onStartup.addListener(createContextMenu);
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
 	if (info.menuItemId === ID_CLOSE_DIRECTORY_LIST) {
-		const message = {
-			method: "close-directory-list"
-		};
-		chrome.tabs.sendMessage(tab.id, message);
+		chrome.tabs.sendMessage(tab.id, closeDirectoryListMessage);
 	}
 });
 
 chrome.runtime.onMessage.addListener((message, sender) => {
 	if (message.method === "close-this-directory-list") {
-		const message = {
-			method: "close-directory-list"
-		};
-		chrome.tabs.sendMessage(sender.tab.id, message);
+		chrome.tabs.sendMessage(sender.tab.id, closeDirectoryListMessage);
 	}
 });
