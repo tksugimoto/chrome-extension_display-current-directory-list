@@ -21,7 +21,7 @@
 
 	chrome.runtime.onMessage.addListener(message => {
 		if (message.method === "close-directory-list") {
-			document.body.removeChild(iframe);
+			iframe.style.display = "none";
 			document.querySelector("html").style.width = null;
 		}
 	});
