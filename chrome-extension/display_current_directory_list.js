@@ -18,4 +18,11 @@
 	const width = `${100 - iframeWidthPercent}%`;
 	document.querySelector("html").style.width = width;
 	iframe.style.left = width;
+
+	chrome.runtime.onMessage.addListener(message => {
+		if (message.method === "close-directory-list") {
+			iframe.style.display = "none";
+			document.querySelector("html").style.width = null;
+		}
+	});
 })();
