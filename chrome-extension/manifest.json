@@ -5,6 +5,11 @@
 
 	"description": "ローカルファイル閲覧時に同一フォルダの一覧を表示",
 
+	"background": {
+		"persistent": false,
+		"scripts": ["background.js"]
+	},
+
 	"content_scripts": [{
 		"matches": [
 			"file:///*"
