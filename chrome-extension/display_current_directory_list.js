@@ -19,6 +19,21 @@
 	document.querySelector("html").style.width = width;
 	iframe.style.left = width;
 
+	// 画像を表示したときにブラウザウィンドウの横幅が小さいと画像右側が隠れる問題対策
+	// 既知の問題：画像クリックで拡大を許可すると拡大時に右側が隠れる
+	if (document.querySelectorAll("body > img").length === 1) {
+		const style = document.createElement("style");
+		style.append(`
+			img:not([style*="cursor: zoom-out;"]) {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+		`);
+		document.head.append(style);
+	}
+
 	chrome.runtime.onMessage.addListener(message => {
 		if (message.method === "close-directory-list") {
 			iframe.style.display = "none";
