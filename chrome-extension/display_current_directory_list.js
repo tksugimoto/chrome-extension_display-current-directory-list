@@ -10,7 +10,7 @@
 	iframe.style.height = "100%";
 	iframe.style.width = "100%";
 	iframe.style.background = "white";
-	iframe.src = document.URL.replace(/[/][^/]*$/, "?in-iframe");
+	iframe.src = location.pathname.replace(/[/][^/]*$/, "?in-iframe");
 	document.body.appendChild(iframe);
 
 	// 右側30%に表示する
