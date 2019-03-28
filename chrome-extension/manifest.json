@@ -18,7 +18,7 @@
 		"matches": [
 			"file:///*"
 		],
-		"run_at": "document_end",
+		"run_at": "document_start",
 		"js": [
 			"display_current_directory_list.js"
 		]

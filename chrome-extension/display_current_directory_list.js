@@ -11,7 +11,9 @@
 	iframe.style.width = "100%";
 	iframe.style.background = "white";
 	iframe.src = location.pathname.replace(/[/][^/]*$/, "?in-iframe");
-	document.body.appendChild(iframe);
+	window.addEventListener("load", () => {
+		document.body.appendChild(iframe);
+	});
 
 	// 右側30%に表示する
 	const iframeWidthPercent = 30; // [%]
