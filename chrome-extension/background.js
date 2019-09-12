@@ -1,20 +1,20 @@
 
 const closeDirectoryListMessage = {
-	method: "close-directory-list"
+	method: 'close-directory-list',
 };
 
-const ID_CLOSE_DIRECTORY_LIST = "close-directory-list";
+const ID_CLOSE_DIRECTORY_LIST = 'close-directory-list';
 
 const createContextMenu = () => {
 	chrome.contextMenus.create({
-		title: "同一フォルダ内のファイル一覧を閉じる",
+		title: '同一フォルダ内のファイル一覧を閉じる',
 		contexts: [
-			"all"
+			'all',
 		],
 		documentUrlPatterns: [
-			"file:///*"
+			'file:///*',
 		],
-		id: ID_CLOSE_DIRECTORY_LIST
+		id: ID_CLOSE_DIRECTORY_LIST,
 	});
 };
 
@@ -28,7 +28,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 chrome.runtime.onMessage.addListener((message, sender) => {
-	if (message.method === "close-this-directory-list") {
+	if (message.method === 'close-this-directory-list') {
 		chrome.tabs.sendMessage(sender.tab.id, closeDirectoryListMessage);
 	}
 });
