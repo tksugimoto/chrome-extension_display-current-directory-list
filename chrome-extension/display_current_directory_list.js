@@ -12,7 +12,9 @@
 	iframe.style.background = 'white';
 	iframe.src = location.pathname.replace(/[/][^/]*$/, '?in-iframe');
 	window.addEventListener('load', () => {
-		document.body.appendChild(iframe);
+		setTimeout(() => {
+			document.body.appendChild(iframe);
+		}, 500);
 	});
 
 	// 右側30%に表示する
