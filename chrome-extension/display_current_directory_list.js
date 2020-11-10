@@ -10,6 +10,7 @@
 	iframe.style.height = '100%';
 	iframe.style.width = '100%';
 	iframe.style.background = 'white';
+	iframe.style.zIndex = 10000;
 	iframe.src = location.pathname.replace(/[/][^/]*$/, '?in-iframe');
 	window.addEventListener('load', () => {
 		setTimeout(() => {
